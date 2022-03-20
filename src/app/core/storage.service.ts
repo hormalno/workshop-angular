@@ -13,7 +13,7 @@ interface IStorage {
 
 export class StorageService implements IStorage {
   setItem<T>(key: string, item: T): T { return item; }
-  getItem<T>(key: string): T { return null; }
+  getItem<T>(key: string): any { return null; }
 }
 
 export function storageFactory(platformId: string): any {
@@ -42,7 +42,7 @@ export class BrowserStorage {
     return item;
   }
 
-  getItem<T>(key: string): T {
+  getItem<T>(key: string): any {
     let item;
     const tmp = this.localStorage.getItem(key);
     if (!tmp) { return null; }
@@ -74,7 +74,7 @@ export class ServerStorage {
     return item;
   }
 
-  getItem<T>(key: string): T {
+  getItem<T>(key: string): any {
     let item;
     const tmp = this.localStorage.getItem(key) as any;
     if (!tmp) { return null; }

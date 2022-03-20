@@ -10,7 +10,6 @@ import { PagesModule } from './feature/pages/pages.module';
 import { ThemesModule } from './feature/themes/themes.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
-import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -21,11 +20,10 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
-    CoreModule,
+    CoreModule.forRoot(),
     AuthModule,
     PagesModule,
-    ThemesModule,
-    SharedModule
+    ThemesModule
   ],
   providers: [],
   bootstrap: [
