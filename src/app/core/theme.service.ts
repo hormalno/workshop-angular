@@ -13,7 +13,7 @@ export class ThemeService {
 
   constructor(private http: HttpClient) { }
 
-  loadThemeList(id: string): Observable<ITheme[]> {
+  loadThemeList(): Observable<ITheme[]> {
     return this.http.get<ITheme[]>(`${apiUrl}/themes`)
   }
 
